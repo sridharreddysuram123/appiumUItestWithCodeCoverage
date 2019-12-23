@@ -32,7 +32,7 @@ public class TestCases extends BaseTestClass {
 		adbUtilities.launchIntrumentedActivity(appAcitivity);	
 		
 		LOG.info("Wait for App to launch");
-		DriverUtility.delay(DriverUtility.wait_20_sec);
+		DriverUtility.delay(DriverUtility.wait_10_sec);
 	}
 	
 	@Test

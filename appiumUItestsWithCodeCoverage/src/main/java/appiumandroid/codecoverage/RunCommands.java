@@ -44,7 +44,7 @@ public class RunCommands {
 		LOG.info("Executing ADB Command " + commandToExecute);
 		try {
 			process = Runtime.getRuntime().exec(commandToExecute);
-			process.waitFor(90, TimeUnit.SECONDS); // Max 90 Seconds to execute command
+			process.waitFor(45, TimeUnit.SECONDS);
 
 			if (process.isAlive()) {
 				process.destroy();
@@ -74,12 +74,16 @@ public class RunCommands {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("ELKRJLKDJSDs");
 		} // throws IOException
 		catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void triggerCommand(String command) throws IOException {
+		String commandToExecute = String.format(ADB_PATH, command);
+		Runtime.getRuntime().exec(commandToExecute);
 	}
 
 }
